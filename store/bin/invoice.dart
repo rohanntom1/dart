@@ -15,35 +15,29 @@ class Invoice {
     //List<double> total;
     do {
       print('\n1. Add Item');
-      // print('2. Show the Invoice');
+      print('2. Show the Invoice');
       //print('3. Delete Item');
-      print('2. Final Item');
+      print('3. Close the Invoice');
       stdout.write('Enter your choice: ');
       input = int.parse(stdin.readLineSync()!);
       if (input == 1) {
         final item = list.listItem();
         count++;
-        // final price = ListItem().amount;
-
-        // for (int i = 0; i <= count; i++) {
-        //   totalAmount = totalAmount + (price[i]);
-        // }
-        // //print(totalAmount);
-      } //else if (input == 2) {
-      //   final fetch = fetchInvoice(count);
-      //   list.amount.forEach((double e) {
-      //     totalAmount = totalAmount + e;
-      //   });
-      //   print('Total is:$totalAmount');
-      //   revenue = revenue + totalAmount;
-      // }
+      } else if (input == 2) {
+        final fetch = fetchInvoice(count);
+        list.amount.forEach((double e) {
+          totalAmount = totalAmount + e;
+        });
+        print('Total is: Rs.${totalAmount.toStringAsFixed(2)}');
+      }
       // else if(input ==3){
       // final fetch = fetchInvoice(count);
       // int value;
       // stdout.write("Enter the serial number of the item to be deleted: ");
       // value = int.parse(stdin.readLineSync()!);
+      //final delete = deleteItem(value)
       //}
-      else if (input == 2) {
+      else if (input == 3) {
         final fetch = fetchInvoice(count);
         list.amount.forEach((double e) {
           totalAmount = totalAmount + e;
@@ -59,15 +53,20 @@ class Invoice {
   }
 
   void fetchInvoice(int count) {
-    final fetchInvoice = list.listItem();
-    for (int i = 0; i <= count; i++) {
-      print('\n\nSerial number: ${i + 1}');
+    final fetchInvoices = list.lists();
+    print('\n\n   INVOICE');
+    for (int i = 0; i <= count - 1; i++) {
+      print('Serial number: ${i + 1}');
       print('Product: ${list.productName[i]}');
       print('Quantity: ${list.quantity[i]}');
       print('MRP: ${list.mrp[i]}');
-      print('Amount: Rs.${list.amount[i].toStringAsFixed(2)}');
+      print('Amount: Rs.${list.amount[i].toStringAsFixed(2)}\n\n');
     }
   }
+
+  // void deleteItem(int value){
+
+  // }
 
   double? totalSale(revenue) {
     double profit;

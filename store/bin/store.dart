@@ -4,7 +4,7 @@ import 'dart:io';
 void main() {
   int input;
   do {
-    print('   Store Management');
+    print('  Store Management');
     print('1. Create a New Invoice');
     print('2. View Total Sale');
     print('3. QUIT');

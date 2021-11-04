@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:core';
-
 import 'invoice.dart';
 
 class ListItem {
@@ -10,7 +9,7 @@ class ListItem {
   List<double> amount = [];
   //final item = Invoice().listItems;
   void listItem() {
-    double quantities, price, total; //totalAmount;
+    double quantities, price, total;
     String? itemName;
     stdout.write('\nEnter the product: ');
     itemName = stdin.readLineSync();
@@ -34,17 +33,24 @@ class ListItem {
       throw Exception('Enter a valid price');
     }
     total = (quantities * price) * 1.18;
+    // item.add({
     //   'productName': [itemName],
     //   'quantity': ['$quantities'],
     //   'price': ['$price'],
     //   'total': ['$total']
     // });
 
-    //final insert = ListItem();
-    this.productName.add(itemName);
-    this.quantity.add(quantities);
-    this.mrp.add(price);
-    this.amount.add(total);
+    productName.add(itemName);
+    quantity.add(quantities);
+    mrp.add(price);
+    amount.add(total);
     print('Amount: Rs.${total.toStringAsFixed(2)}');
+  }
+
+  void lists() {
+    productName;
+    quantity;
+    mrp;
+    amount;
   }
 }
