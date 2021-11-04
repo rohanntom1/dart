@@ -34,17 +34,17 @@ class ListItem {
       throw Exception('Enter a valid price');
     }
     total = (quantities * price) * 1.18;
-    // item.add({
     //   'productName': [itemName],
     //   'quantity': ['$quantities'],
     //   'price': ['$price'],
     //   'total': ['$total']
     // });
-    final insert = ListItem();
-    insert.productName.add(itemName);
-    insert.quantity.add(quantities);
-    insert.mrp.add(price);
-    insert.amount.add(total);
-    print('Amount: $amount');
+
+    //final insert = ListItem();
+    this.productName.add(itemName);
+    this.quantity.add(quantities);
+    this.mrp.add(price);
+    this.amount.add(total);
+    print('Amount: Rs.${total.toStringAsFixed(2)}');
   }
 }

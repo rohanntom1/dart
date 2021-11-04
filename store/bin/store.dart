@@ -4,7 +4,7 @@ import 'dart:io';
 void main() {
   int input;
   do {
-    print('Store Management');
+    print('   Store Management');
     print('1. Create a New Invoice');
     print('2. View Total Sale');
     print('3. QUIT');
@@ -13,12 +13,9 @@ void main() {
     if (input == 1) {
       final invoice = new Invoice();
       return invoice.billing();
-      //revenue= revenue+;
-
-      // print(item);
     } else if (input == 2) {
       final sales = new Invoice();
-      //double sale = sales.totalSale(revenue);
+      double? sale = sales.totalSale(sales.revenue);
     } else if (input == 3) {
       //quit
       print('**Quitting**');
