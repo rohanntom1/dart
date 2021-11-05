@@ -15,9 +15,8 @@ void main() {
       return invoice.billing();
     } else if (input == 2) {
       final sales = new Invoice();
-      double? sale = sales.totalSale(sales.revenue);
+      double? sale = sales.totalSale();
     } else if (input == 3) {
-      //quit
       print('**Quitting**');
       break;
     } else {
